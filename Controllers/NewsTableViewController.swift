@@ -36,6 +36,8 @@ class NewsTableViewController: ArticleViewController {
         tableView.tableHeaderView = searchController.searchBar
         
         if let category = category {
+            self.navigationItem.title = category
+            
             NewsApi.getNewsByCategory(newsCategory: category).sink { completion in
                 switch completion {
                 case .finished:

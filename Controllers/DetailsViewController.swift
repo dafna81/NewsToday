@@ -11,6 +11,7 @@ class DetailsViewController: UIViewController {
     var article: Article?
     var action : ArticleDetailsAction!
     var repo = FavoritesRepository()
+    
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleAuthor: UILabel!

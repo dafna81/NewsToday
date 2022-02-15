@@ -9,7 +9,6 @@ import Foundation
 import FirebaseDatabase
 import Combine
 
-
 class FavoritesRepository {
     
     func getFavoritesRef() -> DatabaseReference {

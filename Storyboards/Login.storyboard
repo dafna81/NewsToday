@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,31 +17,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-h5-ylh" customClass="GIDSignInButton">
-                                <rect key="frame" x="47" y="423" width="320" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES"/>
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Y2J-TZ-bVy"/>
-                                    <constraint firstAttribute="height" constant="50" id="z5d-cV-FvT"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="signIn:" destination="Y6W-OH-hqX" eventType="valueChanged" id="pAl-ht-lD0"/>
-                                </connections>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWS TODAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LH3-4o-SfJ">
+                                <rect key="frame" x="64" y="164" width="286" height="42"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LfU-Ff-Q5Z">
+                                <rect key="frame" x="64" y="608" width="286" height="134"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-h5-ylh" customClass="GIDSignInButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="63"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <connections>
+                                            <action selector="signIn:" destination="Y6W-OH-hqX" eventType="valueChanged" id="pAl-ht-lD0"/>
+                                        </connections>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcL-Ue-6FT">
+                                        <rect key="frame" x="0.0" y="71" width="286" height="63"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign in as guest">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Bxt-h5-ylh" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="cVu-RI-qFF"/>
-                            <constraint firstItem="Bxt-h5-ylh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="y1G-fy-tLf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LH3-4o-SfJ" secondAttribute="trailing" constant="64" id="0Nt-o8-jAe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LfU-Ff-Q5Z" secondAttribute="trailing" constant="64" id="San-Zv-Oyp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="LfU-Ff-Q5Z" secondAttribute="bottom" constant="120" id="TZa-c5-C1H"/>
+                            <constraint firstItem="LH3-4o-SfJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="120" id="coi-ZP-wsD"/>
+                            <constraint firstItem="LH3-4o-SfJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="fxR-mb-u2M"/>
+                            <constraint firstItem="LfU-Ff-Q5Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="w5w-Cn-9Bx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fzH-6T-gEi"/>
                     <connections>
+                        <outlet property="anonymousSignInButton" destination="AcL-Ue-6FT" id="Nlb-wz-1xQ"/>
                         <outlet property="googleSinInButton" destination="Bxt-h5-ylh" id="Mzr-wG-Aau"/>
                     </connections>
                 </viewController>

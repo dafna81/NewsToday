@@ -53,5 +53,4 @@ extension Article {
         return Article(author: author, title: title, description: description, url: url, source: source, image: image, category: category, language: language, country: country, publishedAt: publishedAt)
     }
     
-  
 }

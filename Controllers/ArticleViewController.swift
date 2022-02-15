@@ -11,7 +11,6 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var searchController: UISearchController!
     
-    
     var subscriptions: Set<AnyCancellable> = []
     
     var allNews = [Article]() //  holds all the news
@@ -24,9 +23,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         news = allNews
         
-        
     }
-    
     
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,10 +32,9 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
-        
         let article = news[indexPath.row]
-        
         cell.populate(article: article)
+        
         return cell
     }
     
@@ -58,7 +54,6 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
                 article.description.lowercased().contains(searchText.lowercased()) || article.title.lowercased().contains(searchText.lowercased())
             })
         }
-
     }
     
     // MARK: - Navigation
@@ -69,6 +64,4 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         dest.article = article
     }
     
-    
 }
-

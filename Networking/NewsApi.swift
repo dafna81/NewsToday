@@ -7,22 +7,7 @@
 
 import Foundation
 import Combine
-/*
- @GET("news?access_key=da2cb06c16589460b8fd2f2ea5833539")
-    Call<ArticleResponse> getArticlesByCategory(@Query("access_key") String accessKey,
-                                                @Query("limit") int limit,
-                                                @Query("languages") String languages,
-                                                @Query("countries") String countries,
-                                                @Query("sort") String sort,
-                                                @Query("categories") String category);
- 
- API_KEY = "da2cb06c16589460b8fd2f2ea5833539"
- 
- .baseUrl("http://api.mediastack.com/v1/")
- 
- 
- 
- */
+
 class NewsApi {
     private static let apiClient = ApiClient()
     private static let apiKey = "da2cb06c16589460b8fd2f2ea5833539"
@@ -38,10 +23,6 @@ class NewsApi {
         technology
     }
     
-//    func getNews(category:NewsCategory) -> AnyPublisher<NewsResponse,URLError>? {
-//
-//
-//    }
 }
 
 extension NewsApi {
@@ -66,13 +47,3 @@ extension NewsApi {
     }
 }
 
-/*
- let shared = URLSession.shared
- var componenets = URLComponents()
- componenets.scheme = "https"
- componenets.host = "api.mediastack.com"
- componenets.path  = "/v1/news"
- componenets.queryItems = [URLQueryItem(name: "access_key", value: "da2cb06c16589460b8fd2f2ea5833539")]
- guard let url = componenets.url else {return nil}
- shared.dataTaskPublisher(for: url)
- */

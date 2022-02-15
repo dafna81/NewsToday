@@ -50,10 +50,6 @@ extension UserValidation {
             showError(title: "Error", subtitle: "\(err.localizedDescription)")
             return
         }
-        //        AppDatabase.shared.fetchUserDetails {
-        //            showSuccess(title: "Welcome")
-        //            Router.shared.determineRootViewController()
-        //        }
     }
 }
 
@@ -77,13 +73,9 @@ extension String { // example: "https://dog.png".downloadImage(imageView)
         // formatter takes a date -> String
         // formatter takes a String -> date
         let formatter = ISO8601DateFormatter()
-//        formatter.formatOptions = [.withInternetDateTime]
         guard let date = formatter.date(from: self) else { return "" }
-        
         let dateString = date.formatted(date: .long, time: .shortened)
 
-        
-        
         return dateString
     }
     

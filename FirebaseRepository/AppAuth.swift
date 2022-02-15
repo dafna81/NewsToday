@@ -21,8 +21,6 @@ class AppAuth {
         Auth.auth().signIn(withEmail: email, password: password, completion: callback)
     }
     
-    
-    
     func signOut() {
         try? Auth.auth().signOut()
         Router.shared.determineRootViewController()

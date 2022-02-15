@@ -29,16 +29,12 @@ class FavoritesViewController: ArticleViewController {
         }.store(in: &tasks)
 
         repo.fetchFavorites()
-        
-
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let article = self.news[indexPath.row]
         performSegue(withIdentifier: "favoritesToDetails", sender: article)
     }
-
-   
     
 }
 

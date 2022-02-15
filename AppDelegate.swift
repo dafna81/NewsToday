@@ -13,19 +13,18 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var window: UIWindow?
-    
+        
     static let signInConfig = GIDConfiguration.init(clientID: "394893731294-votfisj885f59l6q6fedhiti8cd80e3u.apps.googleusercontent.com")
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     
         return GIDSignIn.sharedInstance.handle(url)
     }
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
         Router.shared.determineRootViewController()
         
         return true
