@@ -17,7 +17,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        anonymousSignInButton.addTarget(self, action: #selector(handleSignInAnonymously), for: .touchUpInside)
+        anonymousSignInButton.addTarget(self, action: #selector(handleSignInAnonymously),
+                                        for: .touchUpInside)
         googleSinInButton.isUserInteractionEnabled = true
         googleSinInButton.addAction(UIAction(handler: {[weak self] act in
             self?.signIn()
@@ -37,19 +38,14 @@ class LoginViewController: UIViewController {
         let config = AppDelegate.signInConfig
         // Start the sign in flow!
         GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { user, error in
-            
             if let error = error {
                 print(error)
                 return
             }
-            
             guard
                 let authentication = user?.authentication,
                 let idToken = authentication.idToken
-            else {
-                print("??")
-                return
-            }
+            else { return }
             
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: authentication.accessToken)

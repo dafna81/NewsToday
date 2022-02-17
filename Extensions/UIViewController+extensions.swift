@@ -57,7 +57,7 @@ extension LoginViewController: UserValidation {
     
 }
 
-extension String { // example: "https://dog.png".downloadImage(imageView)
+extension String {
     func downloadImage(to imageView:UIImageView) {
         DispatchQueue.global(qos: .userInteractive).async {
             guard let url = URL(string: self) else {return}
