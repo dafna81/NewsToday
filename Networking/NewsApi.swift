@@ -10,7 +10,7 @@ import Combine
 
 class NewsApi {
     private static let apiClient = ApiClient()
-    private static let apiKey = "da2cb06c16589460b8fd2f2ea5833539"
+    private static let apiKey = "api_key"
     private static let baseURL = URL(string: "http://api.mediastack.com/")!
     
     enum NewsCategory {
